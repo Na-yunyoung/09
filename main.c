@@ -5,23 +5,19 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int i, average;
-	int sum;
+	int i;
 	int grade[N_student];
-	printf("input 5 scores : ");
-	
-	sum = 0;
+	int score[N_student];
 	
 	for(i=0;i<N_student;i++)
-	{
+		grade[i] = rand()%100 + 1;
 	
-		scanf("%d",&grade[i]);
-		sum += grade[i];
-	}
+	for(i=0;i<N_student;i++)
+		score[i] = grade[i];
 	
-	average = sum / N_student;
-	
-	printf("score average : %i\n",average);
+		
+	for(i=0;i<N_student;i++)
+		printf("score[%d] = %d (grade : %d)\n",i,score[i],grade[i]);
 	
 	
 	return 0;
