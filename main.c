@@ -6,19 +6,20 @@
 
 int main(int argc, char *argv[]) {
 	int i;
-	int grade[N_student];
-	int score[N_student];
+	int a[N_student] = {1, 2, 3, 4, 5};
+	int b[N_student] = {1, 2, 3, 4, 5};
+	int flag = 0;
 	
 	for(i=0;i<N_student;i++)
-		grade[i] = rand()%100 + 1;
+	{
+		if (a[i] != b[i])
+		{
+			printf("array a and b are not the same\n");
+			flag = 1;
+		}
+	}
 	
-	for(i=0;i<N_student;i++)
-		score[i] = grade[i];
-	
-		
-	for(i=0;i<N_student;i++)
-		printf("score[%d] = %d (grade : %d)\n",i,score[i],grade[i]);
-	
-	
+	if (flag == 0)
+		printf("array a and b are the same\n");
 	return 0;
 }
